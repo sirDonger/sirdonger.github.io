@@ -1,0 +1,198 @@
+@media only screen and (max-width: 768px) {
+	body {
+		min-width: inherit;
+		max-width: inherit;
+	}
+	.b-page__line {
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+		padding: 0 18px;
+		width: 100%;
+	}
+	.b-page__top-line {
+	    position: inherit;
+	    top: inherit;
+	    left: inherit;
+	    width: 100%;
+	    text-align: center;
+	}
+	.b-top-line {
+	    height: auto;
+	    padding: 0px 0px 10px 0px;
+	    overflow: hidden;
+	}
+	.sale {
+		display: none;
+	}
+	.prices {
+		margin: 15px 0;
+	}
+	.sert {
+		display: none;
+	}
+	.honey {
+		width: 30px;
+		margin: 0 5px;
+	}
+	.top-title1 {
+		margin: 10px 0px;
+	}
+	.sale-end-text {
+		margin-top: 0px;
+	}
+	.top-title2 {
+		font-size: 38px;
+	}
+	.top-title2 span {
+		font-size: 24px;
+	}
+	.top-ul__item.top-product {
+	    width: 230px;
+	    height: 330px;
+	    display: inline-block;
+	    background: url(../img/product-top.png) no-repeat center;
+	    -webkit-background-size: contain;
+	    -moz-background-size: contain;
+	    background-size: contain;
+	}
+	.b-header {
+		padding-bottom: 40px;
+	}
+	.drug-text {
+		padding-left: 20px;
+	}
+	.drug-img {
+		display: none;
+	}
+	.how1-text {
+		padding-left: 10px;
+	}
+	.how1,.how2 {
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		background-size: cover;
+	}
+	.how2-text {
+		width: 100%;
+	}
+	.green-line {
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		background-size: cover;
+		height: auto;
+	}
+	.green-line:before,.green-line:after {
+		display: none;
+	}
+	.green-line_how-text {
+		line-height: 24px;
+	}
+	.how2-img {
+    float: right;
+	  margin: 0;
+	    width: auto;
+	    max-width: 100%;
+	}
+	.result-product {
+	     position: inherit; 
+	     left: inherit; 
+	     top: inherit; 
+	    display: block;
+	    max-width: 100%;
+	}
+	.result1{
+		background-attachment: fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		background-size: cover;
+		height: auto;
+		padding-left: 0px;
+	}
+	.result1-text {
+		padding-left: 10px;
+		padding-bottom:10px;
+	}
+	.green-rect1,.green-rect2 {
+		    margin-bottom: 15px;
+	}
+	.disease-ul {
+		width: 100%;
+	}
+	.diabet-img,.zrenie-img,.gl-img,.giper-img,.psor-img,.varik-img,.gemor-img {
+		display: none;
+	}
+	.green-line2 {
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		background-size: cover;
+		height: auto;
+		padding: 10px 0px;
+	}
+	.green-line2:before,.green-line2:after {
+		display: none;
+	}
+	.green-line2_text1 {
+		line-height: 24px;
+	}
+	.disease-ul.fix {
+	    width: 100%;
+	}
+	.disease-ul.fix-900 {
+	    margin-left: 0px;
+	    width: 100%;
+	}
+	.other-ul {
+		margin-left: 0px;
+	}
+	.other-product {
+	     position: inherit; 
+	     right: inherit; 
+	     top: inherit; 
+	}
+	.instruction-img {
+	    display: none;
+	}
+	.instruction-top p {
+		width: 100%;
+	}
+	.balloons,.female,.mocha,.intoxic,.skin,.fire,.orvi,.prost,.parasit,.diabet {
+		display: none;
+	}
+	.instruction-text_half {
+		width: 100%;
+		margin: 0;
+		margin-bottom: 10px;
+	}
+	.instruction_half {
+		width: 100%;
+		margin: 0;
+		margin-bottom: 10px;
+	}
+	.specialist-img1,.specialist-img2,.specialist-img3 {
+		display: none;
+	}
+	.specialist-text {
+		width: 100%;
+	}
+	.contact-cont {
+		width: 100%;
+		margin: 0;
+	}
+	.order-img {
+		display: none;
+	}
+	.form {
+		width: 100%;
+		float: left;
+	}
+	.footer-line {
+		display: none;
+	}
+	.takzje {
+		font-size: 20px;
+	}
+	.instruction-title1 {
+		word-wrap:break-word;
+	}
+}

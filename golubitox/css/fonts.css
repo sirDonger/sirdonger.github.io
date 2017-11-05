@@ -1,0 +1,11 @@
+
+/* font-family: "OfficinaSerifBold"; */
+@font-face {
+    font-family: "OfficinaSerifBold";
+    src: url("../fonts/OfficinaSerifBold.eot");
+    src: url("../fonts/OfficinaSerifBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/OfficinaSerifBold.woff") format("woff"),
+    url("../fonts/OfficinaSerifBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
