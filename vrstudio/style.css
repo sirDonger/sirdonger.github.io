@@ -1,0 +1,223 @@
+body {
+    background-image: url("image/back.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+.navbar-inner{
+    background: white;
+    padding: 15px 0;
+    height: 60px;
+}
+@font-face {
+    font-family: ASPHALTIC SCRATCH; /* Имя шрифта */
+    src: url(fonts/10943.otf);
+}
+.navbar .brand{
+    margin-top: 5px;
+    font-family: "ASPHALTIC SCRATCH";
+    font-size: 325%;
+    color: black;
+}
+.navbar .nav>li>a {
+    color: #0e519d;
+    font-size: large;
+    margin-right: 20px;
+}
+.navbar .nav>li>a:hover{
+    border: solid 2px #0e519d;
+    color: #0e519d;
+}
+.nav-collapse, .nav-collapse.collapse{
+    background: white;
+}
+.content-welcome>h1{
+    text-align: center;
+    margin-top: 120px;
+}
+.content-welcome>p{
+    text-align: center;
+    font-size: large;
+    margin: 20px 10%  ;
+}
+.content-we>h1{
+    text-align: center;
+    margin-top: 120px;
+}
+.content-we>p{
+    text-align: center;
+    font-size: large;
+    margin: 20px 10%  ;
+}
+.content-team>h1{
+    text-align: center;
+    margin-top: 120px;
+}
+.content-team>h2{
+    text-align: center;
+    font-size: large;
+    margin: 10px 10%  ;
+}
+
+.cont {
+    width: 188px;
+    height: 261px;
+    position: relative;
+    overflow: hidden;
+    margin-top:10px;
+    padding: 5px;
+    float: left;
+}
+.cont  a {
+    vertical-align: middle;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Verdana;
+    font-weight: 100;
+}
+.mini{
+    font-size: 10px !important;
+}
+.cont img{
+    width: 188px;
+    height: 261px;
+}
+.description {
+    padding-top: 45px;
+    height: 110px;
+    width: 150px;
+    background: #000;
+    opacity: 0.7;
+    border-radius: 50%;
+    filter: alpha(opacity=30); /* IE lt 8 */
+    -ms-filter: "alpha(opacity=30)"; /* IE 8 */
+    -webkit-transition: 1s;
+    -moz-transition: 1s;  /* Firefox 4-15 */
+    -o-transition: 1s;  /* Opera 10.5–12.00 */
+    transition: 1s;  /* Firefox 16+, Opera 12.50+ */
+    position: absolute;
+    top: 55px;
+    left: 19px;
+    text-align: center;
+    -webkit-transform: scale(0);
+}
+.cont:hover .description {
+
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+.imagies{
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+#slides {
+    position: relative;
+    height: 300px;
+    padding: 0px;
+    list-style-type: none;
+    margin: 0% 27%;
+}
+.slide {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+.showing {
+    opacity: 1;
+    z-index: 2;
+}
+#slider {
+    height: 470px;
+    width: 100%;
+}
+.works>h1{
+    text-align: center;
+    margin-top: 120px;
+}
+.statistic{
+    margin-top:200px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+#columnchart_values, #regions_div, #piechart_3d{
+    padding-top: 20px;
+}
+
+#chartContainer{
+    margin-top: 190px;
+    margin-bottom: -90px;
+    height: 370px;
+    width: 100%;
+}
+div.uSocial-Share{
+    margin-left: 35%;
+}
+#contacts>h1{
+    text-align: center;
+    margin-top: 120px;
+}
+#contacts>p{
+    text-align: center;
+    font-size: large;
+    margin: 20px 10%  ;
+}
+#contacts>div>p{
+    text-align: center;
+    font-size: large;
+    margin: 20px 10%  ;
+}
+#connectus{
+    display: flex;
+    justify-content: center;
+}
+#block_id{
+    margin: 0% 37%;
+}
+#map{
+    border: 4px double white;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 40px;
+}
+/* Large desktop */
+@media (min-width: 1200px) {
+    #slides{
+        margin-left: 32%;
+    }
+}
+/*Laptop 1024px*/
+@media (min-width: 979px) and (max-width: 1200px) {
+    #slides{
+        margin-left: 30%;
+    }
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+    .statistic {
+        margin-top: 50px;
+    }
+}
