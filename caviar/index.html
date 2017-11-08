@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="ru-ru">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link href="css/normalize.min.css" rel="stylesheet" type="text/css"/>
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic|PT+Sans+Narrow:400,700|Russo+One&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+                <script src="js/underscore-min.js"></script>
+                <script>window.tobiz = {"project_id":"61435","rep_id":"82549","user_id":"40553","owner_email":"ssrko98@gmail.com","user_email":"ssrko98@gmail.com","bs":false,"t":"0"}</script>
+        <link rel="stylesheet" type ="text/css" href="css/style.min.css?ver=1510053474">
+        <!--<script type="text/javascript" src="js/script.min.js?v=1508484394"></script>                        <meta name="description" content="" />-->
+        <meta name="keywords" content="" />
+                    <meta name="viewport" content="width=1200">
+                <title></title>
+        
+
+            <!--<script type="text/javascript">-->
+                <!--$(function () {-->
+                    <!--$('body').on('submit', 'form[action="handler.php"]', function (event) {-->
+                        <!--event.preventDefault();-->
+                        <!--var this_form = $(this);-->
+                        <!--if (!$(this).children("input[name=project_id]").length)-->
+                            <!--$(this).prepend('<input type="hidden" name="project_id" value="' + window.tobiz.project_id + '">');-->
+                        <!--if (!$(this).children("input[name=page_id]").length)-->
+                            <!--$(this).prepend('<input type="hidden" name="page_id" value="' + window.tobiz.rep_id + '">');-->
+                        <!--if (!$(this).children("input[name=referrer]").length)-->
+                            <!--$(this).prepend('<input type="hidden" name="referrer" value="' + document.referrer + '">');-->
+                        <!--if (!$(this).children("input[name=user_id]").length)-->
+                            <!--$(this).prepend('<input type="hidden" name="user_id" value="' + window.tobiz.user_id + '">');-->
+
+                        <!--if ($(this).find("[data-action]").size()) {-->
+                            <!--console.log(123);-->
+                            <!--$(this).prepend('<input type="hidden" name="action" value="' + $(this).find("[data-action]").data('action') + '">');-->
+                            <!--$(this).prepend('<input type="hidden" name="amount" value="' + $(this).find("[data-action]").data('amount') + '">');-->
+                            <!--$(this).prepend('<input type="hidden" name="url" value="' + $(this).find("[data-action]").data('url') + '">');-->
+                        <!--} else {-->
+                            <!--console.log('not found');-->
+                        <!--}-->
+                        <!--var formData = new FormData($(this)[0]);-->
+                        <!--var this_block = $(this).closest('.section');-->
+                        <!--$.ajax({-->
+                            <!--dataType: "json",-->
+                            <!--type: "POST",-->
+                            <!--url: "/handler.php",-->
+                            <!--data: formData,-->
+                            <!--async: false,-->
+                            <!--cache: false,-->
+                            <!--contentType: false,-->
+                            <!--processData: false-->
+                        <!--}).done(function (data) {-->
+                            <!--if (data.status == 'OK') {-->
+                                <!--alert(data.msg);-->
+                                <!--this_form.each(function () {-->
+                                    <!--$(this)[0].reset();-->
+                                <!--})-->
+                                <!--$('.popup_form').hide();-->
+                            <!--}-->
+                            <!--if (data.status == 'ERROR') {-->
+                                <!--alert(data.msg);-->
+                            <!--}-->
+                            <!--if (data.status == 'JC') {-->
+                                        <!--$('body').append(data.form);-->
+                                <!--$('#jc_form').submit();-->
+                                <!--this_form.each(function () {-->
+                                    <!--$(this)[0].reset();-->
+                                <!--})-->
+                            <!--}-->
+                            <!--if (data.status == 'SR') {-->
+                                        <!--$('body').append(data.form);-->
+                                <!--$('#sr_form').submit();-->
+                                <!--this_form.each(function () {-->
+                                    <!--$(this)[0].reset();-->
+                                <!--})-->
+                            <!--}-->
+                            <!--if (data.status == 'GR') {-->
+                                        <!--$('body').append(data.form);-->
+                                <!--$('#gr_form').submit();-->
+                                <!--this_form.each(function () {-->
+                                    <!--$(this)[0].reset();-->
+                                <!--})-->
+                            <!--}-->
+                            <!--if (data.status == 'RK') {-->
+                                        <!--this_form.each(function () {-->
+                                    <!--$(this)[0].reset();-->
+                                <!--})-->
+                                <!--window.location.href = data.url;-->
+                            <!--}-->
+                            <!--if (data.status == 'redirect') {-->
+                                        <!--this_form.each(function () {-->
+                                    <!--$(this)[0].reset();-->
+                                <!--})-->
+
+
+                                <!--window.location.href = data.url;-->
+                            <!--}-->
+                            <!--if (data.status == 'thanks') {-->
+                                        <!--this_block.find('.popup_thanks').show();-->
+                                <!--this_form.each(function () {-->
+                                    <!--$(this)[0].reset();-->
+                                <!--})-->
+                                <!--$('.popup_form').hide();-->
+                                <!--this_block.find('.extra_info_block_wrapper').hide();-->
+                            <!--}-->
+                            <!--if (data.status == 'thanks_order_complete') {-->
+                                        <!--this_block.find('.popup_thanks').show();-->
+                                <!--this_form.each(function () {-->
+                                    <!--$(this)[0].reset();-->
+                                <!--})-->
+                                <!--window.basket.clean();-->
+                                <!--window.basket.hideForm();-->
+                                <!--window.basket.renderForm();-->
+                                <!--window.basket.renderBtn();-->
+                                <!--window.basket.hideBtn();-->
+                                <!--alert('Спасибо ваш заказ успешно оформлен!');-->
+                                <!--$('.popup_form').hide();-->
+                            <!--}-->
+                        <!--}).error(function (xhr, ajaxOptions, thrownError) {-->
+                            <!--console.log(xhr.status);-->
+                            <!--console.log(thrownError)-->
+                        <!--});-->
+                    <!--})-->
+                <!--})-->
+            <!--</script>-->
+<style id="page_style">
+</style>
+</head>
+<body class="editor_false">
+        <div id="wrapper">
+<div class="hide_line section section103  " style="background-color:#FFFFFF;  background-image:url(img/null.png);" data-id="677749" id="b_677749"><a name="a_210031"></a>
+							<div class="section_inner">
+								<div class="slogan">
+                                    <div class="text1">Продажа красной и черной икры<br></div>
+                                    <div class="text2">Работаем по всей России</div>
+								</div>
+
+                                    <div class="logo_img"><img src="img/200x0/default_logo.jpg" alt=""></div>
+                                                                    
+                                                                
+								<div class="phone-and-btn">
+										<div class="phone1  ">8 800 333 22 33</div>
+										<div class="btn1 surround  " style="background-color:#AA0000;  border-radius: 1.5em;    ">Заказать звонок</div>
+										<div class="clear"></div>
+								</div>
+								<div class="clear"></div>
+									
+                                                                        <div class="popup_form">
+                            <!--<div class="popup_form_inner">-->
+                                <!--<div class="popup_form_close">X</div>-->
+                                <!--<div class="popup_form_title">Оставить  заявку</div>-->
+                                <!--<form action="handler.php" enctype="multipart/form-data" method="post">-->
+                                        <!--<div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Перезвоните мне" style="background-color:#AA0000;    border-radius: 1.5em; ;   "></div></div></div>-->
+                                <!--</form>-->
+                                <!--<div class="popup_form_text"> Нажимая на кнопку, Вы принимаете <a data-cke-saved-href="file:///%3Fpersonal_data=1" href="file:///%3Fpersonal_data=1" target="_blank">Положение</a> и <a data-cke-saved-href="file:///%3Fpersonal_data=2" href="file:///%3Fpersonal_data=2" target="_blank">Согласие</a> на обработку персональных данных. </div>-->
+                            <!--</div>-->
+                    </div>
+                
+                                                                        
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+							</div>
+						</div>
+
+<div class="hide_line section section116  " style="background:#FFFFFF ;  background-image:url(/img/null.png);" data-id="677750" id="b_677750"><a name="a_210092"></a><div class="section_inner">
+                        <div class="menu-toogler"><i class="fa fa-bars"></i></div><div class="menu1 "><ul><li class="level0"><a href="#anchor1" title="Почему мы">Почему мы</a></li><li class="level0"><a href="#anchor2" title="Каталог">Каталог</a></li><li class="level0"><a href="#anchor4" title="Контакты">Контакты</a></li></ul></div>
+                    </div>
+                </div>
+
+<div class="section section153   fixed " style="background-color:#ffffff; background-image:url(img/1920x0/2ad4590a243f5f1f0c4da4f0a12772c1.jpg);" data-id="677751" id="b_677751"><a name="a_210008"></a>
+							
+							<div class="dark"></div>
+							<div class="noise" style="background-image:url(img/null.png);"></div>
+							<div class="section_inner  ">
+								<div class="layer"><div class="title  "><span style="font-family:neucha;"><br>Продажа красной и черной икры</span><br></div>
+								<div class="sub_title  ">Наш ассортимент икры постоянно обновляется!<br>Успейте купить икру по акции!<br></div>
+								
+									<div class="btn1 surround  " style="background-color:#AA0000;  border-radius: 1.5em;    ">Оставить заявку</div>
+									<div class="btn_descr">Спешите, предложение ограничено!<br></div>
+								</div>
+								
+                                                                        <div class="popup_form">
+                            <!--<div class="popup_form_inner">-->
+                                <!--<div class="popup_form_close">X</div>-->
+                                <!--<div class="popup_form_title">Оставить  заявку</div>-->
+                                <!--<form action="handler.php" enctype="multipart/form-data" method="post">-->
+                                        <!--<div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Заказать" style="background-color:#AA0000;    border-radius: 1.5em; ;   "></div></div></div>-->
+                                <!--</form>-->
+                                <!--<div class="popup_form_text"> Нажимая на кнопку, Вы принимаете <a data-cke-saved-href="file:///%3Fpersonal_data=1" href="file:///%3Fpersonal_data=1" target="_blank">Положение</a> и <a data-cke-saved-href="file:///%3Fpersonal_data=2" href="file:///%3Fpersonal_data=2" target="_blank">Согласие</a> на обработку персональных данных. <br></div>-->
+                            <!--</div>-->
+                    </div>
+                
+                                                                        
+								<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+							</div>
+						</div>
+
+<div class="hide_line  section   section128  " style="background-color:#FFFFFF;  background-image:url(/img/null.png);" data-id="677752" id="b_677752"><a name="anchor1"></a>
+							<div class="section_inner">
+								<div class="title  ">Продажа красной и черной икры<br></div>
+								<div class="sub_title  ">Наши преимущества<br></div>
+								  
+									<div class="arr1">
+										<div class="col_3">
+											
+											
+											<div class="ico1   radius     border   shadow  "><i class="fa fa-birthday-cake" style="color:#AA0000;"></i></div>
+											
+											<div class="title1">Продаем икру<br>более 5 лет!<br></div>
+											<div class="txt1  hidden  ">Вы можете выбрать типовой проект или создать собственный проект готового дома с нашей помощью</div>
+											<div class="price1  hidden  ">2000 руб. за кв. м</div>
+                                                                                        <div class=" hidden btn1 surround  " style="background-color:#AA0000;  border-radius: 1.5em;    ">Узнать подробнее</div>
+											
+                                                                                        
+											
+                                                                                            <div class="popup_form">
+                            <!--<div class="popup_form_inner">-->
+                                <!--<div class="popup_form_close">X</div>-->
+                                <!--<div class="popup_form_title">Оставить  заявку</div>-->
+                                <!--<form action="handler.php" enctype="multipart/form-data" method="post">-->
+                                        <!--<div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#AA0000;    border-radius: 1.5em; ;   "></div></div></div>-->
+                                <!--</form>-->
+                                <!--<div class="popup_form_text">Мы не передаем Вашу персональную информацию третьим лицам.</div>-->
+                            <!--</div>-->
+                    </div>
+                
+                                                                                        
+										</div>
+										<div class="col_3">
+											
+											
+											<div class="ico2  radius     border   shadow  "><i class="fa fa-dollar" style="color:#AA0000;"></i></div>
+											
+											<div class="title2">У нас самые<br>привлекательные цены!<br></div>
+											<div class="txt2  hidden  ">Вы можете выбрать типовой проект или создать собственный проект готового дома с нашей помощью</div>
+											<div class="price2  hidden  ">2000 руб. за кв. м</div>
+                                                                                        <div class=" hidden btn2 surround  " style="background-color:#AA0000;  border-radius: 1.5em;    ">Узнать подробнее</div>
+											
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <!--<div class="popup_form_inner">-->
+                                <!--<div class="popup_form_close">X</div>-->
+                                <!--<div class="popup_form_title">Оставить  заявку</div>-->
+                                <!--<form action="handler.php" enctype="multipart/form-data" method="post">-->
+                                        <!--<div class="form2"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#AA0000;    border-radius: 1.5em; ;   "></div></div></div>-->
+                                <!--</form>-->
+                                <!--<div class="popup_form_text">Мы не передаем Вашу персональную информацию третьим лицам.</div>-->
+                            <!--</div>-->
+                    </div>
+                
+                                                                                        
+										</div>
+										<div class="col_3 last">
+											
+											
+											<div class="ico3   radius     border   shadow  "><i class="fa fa-clock-o" style="color:#AA0000;"></i></div>
+											
+											<div class="title3">Наши специалисты готовы<br>ответить в любое время!<br></div>
+											<div class="txt3  hidden  ">Вы можете выбрать типовой проект или создать собственный проект готового дома с нашей помощью</div>
+											<div class="price3  hidden  ">2000 руб. за кв. м</div>
+                                                                                        <div class=" hidden btn3 surround  " style="background-color:#AA0000;  border-radius: 1.5em;    ">Узнать подробнее</div>
+											
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form3"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#AA0000;    border-radius: 1.5em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text">Мы не передаем Вашу персональную информацию третьим лицам.</div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+										<div class="clear"></div>
+                                            <div class="extra_info_block_wrapper">
+                                                <div class="extra_info_block">
+                                                    <div class="close">Х</div>
+                                                    <div class="left"><img src="img/400x400/image_247.jpg" alt="">
+
+                                                    </div>
+                                                    <div class="right">
+                                                        <div class="extra_info1"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+
+                                                        <div class="btn1x surround " style="background-color:#AA0000; ">Узнать подробнее</div>
+                                                    </div>
+                                                    <div class="clear"></div>
+
+                                                </div>
+                                            </div>
+                                            <div class="extra_info_block_wrapper">
+                                                <div class="extra_info_block">
+                                                    <div class="close">Х</div>
+                                                    <div class="left"><img src="img/400x400/image_220.jpg" alt="">
+
+                                                    </div>
+                                                    <div class="right">
+                                                        <div class="extra_info2"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+
+                                                        <div class="btn2x surround " style="background-color:#AA0000; ">Узнать подробнее</div>
+                                                    </div>
+                                                    <div class="clear"></div>
+
+                                                </div>
+                                            </div>
+                                            <div class="extra_info_block_wrapper">
+                                                <div class="extra_info_block">
+                                                    <div class="close">Х</div>
+                                                    <div class="left"><img src="img/400x400/image_286.jpg" alt="">
+
+
+                                                    </div>
+                                                    <div class="right">
+                                                        <div class="extra_info3"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+
+                                                        <div class="btn3x surround " style="background-color:#AA0000; ">Узнать подробнее</div>
+                                                    </div>
+                                                    <div class="clear"></div>
+
+                                                </div>
+                                            </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								
+							</div>
+						</div>
+
+<div class="hide_line    section section132 " style="background-color:#FFFFFF;  background-image:url(img/null.png);" data-id="677753" id="b_677753"><a name="a_210126"></a>
+							<div class="section_inner">
+								<div class="title  "><p>Стоимость уникального деликатеса<br></p> </div>
+								<div class="sub_title  hidden   ">Рыбный текст</div>
+								<div class="text" style=" "><p>Многих людей интересует вопрос, сколько стоит икра осетровая. Цена ее зависит от нескольких факторов. И мы расскажем о том, как формируется ценовая политика. Прежде всего, имеет значение способ производства икры и от той среды, в которой разводили осетровых. Выпуск продукции налажен таким образом, что она остается абсолютно свежей. Откройте любую баночку – вы увидите в ней великолепный по своему качеству продукт! Икра – к икринке! Почти одинаковые по размеру, они имеют неповрежденный вид и натуральный цвет. Значит, это качественная черная осетровая икра. Цена ее будет соответствующей! Вы ведь знаете, что это продукт относится к категории деликатесов и стоит недешево?<br></p><p><br></p><p>Себестоимость складывается из стоимости выращивания и содержания осетра, корма, очистки и озонирования воды в бассейнах, где разводится рыба, работы высоквалифицированных специалистов. На заводе все заботятся о здоровье стада. Это сложный и кропотливый процесс. Первую икру самка осетра дает примерно на третьем-четвертом году жизни, часть икринок идет для выращивания мальков, остальная икра становится продуктом разного стандарта.</p></div>
+							</div>
+						</div>
+
+<div class="hide_line  section backlight transparent_ico section200  " style="background-color:#FFFFFF;  background-image:url(img/null.png);" data-id="677754" id="b_677754"><a name="anchor2"></a>
+							<div class="section_inner">
+								<div class="title  ">Каталог икры<br></div>
+								<div class="sub_title  ">Наш ассортимент постоянно обновляется!<br></div>
+								  
+									<div class="arr1">
+										<div class="col_4">
+											<div class="image1 s200  radius    show_extra_info "><img src="img/200x200/36d864ff63f74e2f81f8d1efdbf46eef.jpg" alt=""></div>
+											
+											
+											
+											
+                                            <div class="title1">ИКРА КРАСНАЯ, STANDART 8<br></div>
+											<div class="txt1  hidden  ">Вы можете выбрать типовой проект или создать собственный проект готового дома с нашей помощью</div>
+											<div class="price1 "><span style="font-size:20px;">400 руб./100 гр.<br></span></div>
+                                                                                        <div class="btn1 surround  " style="background-color:#AA0000;  border-radius: 1.5em;    ">Заказать</div>
+                                                                                        <div class="product_card" data-id="0">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#AA0000;    border-radius: 1.5em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"> Нажимая на кнопку, Вы принимаете <a data-cke-saved-href="file:///%3Fpersonal_data=1" href="file:///%3Fpersonal_data=1" target="_blank">Положение</a> и <a data-cke-saved-href="file:///%3Fpersonal_data=2" href="file:///%3Fpersonal_data=2" target="_blank">Согласие</a> на обработку персональных данных. <br></div>
+                            </div>
+                    </div>
+                                                                                        
+										</div>
+										<div class="col_4">
+											<div class="image2 s200  radius    show_extra_info "><img src="img/200x200/570e0bd1a19147198190ec807287149c.jpg" alt=""></div>
+
+											
+											<div class="title2">ИКРА ЧЕРНАЯ, STANDART 8<br></div>
+											<div class="txt2  hidden  ">Вы можете выбрать типовой проект или создать собственный проект готового дома с нашей помощью</div>
+											<div class="price2 "><span style="font-size:20px">400 руб./100 гр.</span><br></div>
+                                                                                        <div class="btn2 surround  " style="background-color:#AA0000;  border-radius: 1.5em;    ">Заказать</div>
+                                                                                        <div class="product_card" data-id="1">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form2"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#AA0000;    border-radius: 1.5em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"> Нажимая на кнопку, Вы принимаете <a data-cke-saved-href="file:///%3Fpersonal_data=1" href="file:///%3Fpersonal_data=1" target="_blank">Положение</a> и <a data-cke-saved-href="file:///%3Fpersonal_data=2" href="file:///%3Fpersonal_data=2" target="_blank">Согласие</a> на обработку персональных данных. <br></div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+                                                                                <div class="clear480"></div>
+										<div class="col_4 ">
+											<div class="image3 s200  radius    show_extra_info "><img src="img/200x200/193f7f9674210099a465dfecc01e7eaf.jpg" alt=""></div>
+
+											
+											<div class="title3">ИКРА КРАСНАЯ, STANDART 10<br></div>
+											<div class="txt3  hidden  ">Вы можете выбрать типовой проект или создать собственный проект готового дома с нашей помощью</div>
+											<div class="price3 "><span style="font-size:20px">400 руб./100 гр.</span><br></div>
+                                            <div class="btn3 surround  " style="background-color:#AA0000;  border-radius: 1.5em;    ">Заказать</div>
+                                            <div class="product_card" data-id="2">Редактировать карточку товара</div>
+
+                                                <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form3"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#AA0000;    border-radius: 1.5em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"> Нажимая на кнопку, Вы принимаете <a data-cke-saved-href="file:///%3Fpersonal_data=1" href="file:///%3Fpersonal_data=1" target="_blank">Положение</a> и <a data-cke-saved-href="file:///%3Fpersonal_data=2" href="file:///%3Fpersonal_data=2" target="_blank">Согласие</a> на обработку персональных данных. <br></div>
+                            </div>
+                    </div>
+                                                                                        
+										</div>
+										<div class="col_4 last">
+											<div class="image4 s200  radius    show_extra_info "><img src="img/200x200/452213768792316e42a10349be46f977.jpg" alt=""></div>
+											<div class="title4">ИКРА ЧЕРНАЯ, STANDART 15<br></div>
+											<div class="txt4  hidden  ">Вы можете выбрать типовой проект или создать собственный проект готового дома с нашей помощью</div>
+											<div class="price4 "><span style="font-size:20px">400 руб./100 гр.</span><br></div>
+                                                                                        <div class="btn4 surround  " style="background-color:#AA0000;  border-radius: 1.5em;    ">Заказать</div>
+                                                                                        <div class="product_card" data-id="3">Редактировать карточку товара</div>
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form4"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#AA0000;    border-radius: 1.5em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text"> Нажимая на кнопку, Вы принимаете <a data-cke-saved-href="file:///%3Fpersonal_data=1" href="file:///%3Fpersonal_data=1" target="_blank">Положение</a> и <a data-cke-saved-href="file:///%3Fpersonal_data=2" href="file:///%3Fpersonal_data=2" target="_blank">Согласие</a> на обработку персональных данных. <br></div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+										<div class="clear"></div>
+                                            <div class="extra_info_block_wrapper">
+                                                <div class="extra_info_block">
+                                                    <div class="close">Х</div>
+                                                    <div class="left"><img src="img/400x400/36d864ff63f74e2f81f8d1efdbf46eef.jpg" alt="">
+
+                                                    </div>
+                                                    <div class="right">
+                                                        <div class="extra_info1"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+
+                                                        <div class="btn1x surround " style="background-color:#AA0000; ">Заказать</div>
+                                                    </div>
+                                                    <div class="clear"></div>
+
+                                                </div>
+                                            </div>
+                                            <div class="extra_info_block_wrapper">
+                                                <div class="extra_info_block">
+                                                    <div class="close">Х</div>
+                                                    <div class="left"><img src="img/400x400/570e0bd1a19147198190ec807287149c.jpg" alt="">
+
+                                                    </div>
+                                                    <div class="right">
+                                                        <div class="extra_info2"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+
+                                                        <div class="btn2x surround " style="background-color:#AA0000; ">Заказать</div>
+                                                    </div>
+                                                    <div class="clear"></div>
+
+                                                </div>
+                                            </div>
+                                            <div class="extra_info_block_wrapper">
+                                                <div class="extra_info_block">
+                                                    <div class="close">Х</div>
+                                                    <div class="left"><img src="img/400x400/193f7f9674210099a465dfecc01e7eaf.jpg" alt="">
+
+                                                    </div>
+                                                    <div class="right">
+                                                        <div class="extra_info3"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+
+                                                        <div class="btn3x surround " style="background-color:#AA0000; ">Заказать</div>
+                                                    </div>
+                                                    <div class="clear"></div>
+
+                                                </div>
+                                            </div>
+                                            <div class="extra_info_block_wrapper">
+                                                <div class="extra_info_block">
+                                                    <div class="close">Х</div>
+                                                    <div class="left"><img src="img/400x400/452213768792316e42a10349be46f977.jpg" alt="">
+
+                                                    </div>
+                                                    <div class="right">
+                                                        <div class="extra_info4"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+
+                                                        <div class="btn4x surround " style="background-color:#AA0000; ">Заказать</div>
+                                                    </div>
+                                                    <div class="clear"></div>
+
+                                                </div>
+                                            </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								
+							</div>
+						</div>
+
+<div class="hide_line    section section132 " style="background-color:#ffffff;  background-image:url(/img/null.png);" data-id="677755" id="b_677755"><a name="a_210127"></a>
+							<div class="section_inner">
+								<div class="title  "><p>Не стоит покупать дешевую черную икру!</p></div>
+								<div class="sub_title  hidden   ">Рыбный текст</div>
+								<div class="text" style=" "><p>Цена черной икры в Москве может колебаться в достаточно широком диапазоне. Не поддавайтесь соблазну приобрести дешевую, потому что, скорее всего, это подделка или низкопробный продукт, от которого нет никакой пользы. Если уж вы решили полакомиться, то советуем купить икру черную осетровую достойного качества. Нередко звучит мысль, что человек должен время от времени себя баловать. Введите в поисковик волшебную фразу «черная икра купить Москва цена» – и вы узнаете адрес сайта, при помощи которого удастся осуществить заветную мечту – полакомиться деликатесом.<br></p><p><br></p><p>Следует также учесть, что срок хранения черной икры различный – от 15 дней до полугода. Это зависит от вида продукта, который Вы выбираете. Причем хранить икру нужно при определенных условиях, указанных на упаковке. Лучше всего поставить продукт в холодильник.</p></div>
+							</div>
+						</div>
+
+<div class="hide_line  section   section128  " style="background-color:#ffffff;  background-image:url(/img/null.png);" data-id="677756" id="b_677756"><a name="a_210152"></a>
+							<div class="section_inner">
+								<div class="title  ">Способы оплаты<br></div>
+								<div class="sub_title  ">Вы можете оплатить заказ одним из следующих способов:<br></div>
+								  
+									<div class="arr1">
+										<div class="col_3">
+											
+											
+											<div class="ico1   radius     border   shadow  "><i class="fa fa-money" style="color:#AA0000;"></i></div>
+											
+											<div class="title1">НАЛИЧНЫМ РАСЧЕТОМ<br></div>
+											<div class="txt1  hidden  ">Вы можете выбрать типовой проект или создать собственный проект готового дома с нашей помощью</div>
+											<div class="price1  hidden  ">2000 руб. за кв. м</div>
+                                                                                        <div class=" hidden btn1 surround  " style="background-color:#AA0000;  border-radius: 1.5em;    ">Узнать подробнее</div>
+											
+                                                                                        
+											
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#AA0000;    border-radius: 1.5em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text">Мы не передаем Вашу персональную информацию третьим лицам.</div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+										<div class="col_3">
+											
+											
+											<div class="ico2  radius     border   shadow  "><i class="fa fa-credit-card" style="color:#AA0000;"></i></div>
+											
+											<div class="title2">БАНКОВСКОЙ КАРТОЙ<br></div>
+											<div class="txt2  hidden  ">Вы можете выбрать типовой проект или создать собственный проект готового дома с нашей помощью</div>
+											<div class="price2  hidden  ">2000 руб. за кв. м</div>
+                                                                                        <div class=" hidden btn2 surround  " style="background-color:#AA0000;  border-radius: 1.5em;    ">Узнать подробнее</div>
+											
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form2"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#AA0000;    border-radius: 1.5em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text">Мы не передаем Вашу персональную информацию третьим лицам.</div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+										<div class="col_3 last">
+											
+											
+											<div class="ico3   radius     border   shadow  "><i class="fa fa-cc-paypal" style="color:#AA0000;"></i></div>
+											
+											<div class="title3">ЭЛЕКТРОННЫМ КОШЕЛЬКОМ<br></div>
+											<div class="txt3  hidden  ">Вы можете выбрать типовой проект или создать собственный проект готового дома с нашей помощью</div>
+											<div class="price3  hidden  ">2000 руб. за кв. м</div>
+                                                                                        <div class=" hidden btn3 surround  " style="background-color:#AA0000;  border-radius: 1.5em;    ">Узнать подробнее</div>
+											
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form3"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#AA0000;    border-radius: 1.5em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text">Мы не передаем Вашу персональную информацию третьим лицам.</div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+										<div class="clear"></div>
+                                        <div class="extra_info_block_wrapper">
+                                            <div class="extra_info_block">
+                                                <div class="close">Х</div>
+                                                <div class="left"><img src="img/400x400/image_247.jpg" alt="">
+
+                                                </div>
+                                                <div class="right">
+                                                    <div class="extra_info1"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+
+                                                    <div class="btn1x surround " style="background-color:#AA0000; ">Узнать подробнее</div>
+                                                </div>
+                                                <div class="clear"></div>
+
+                                            </div>
+                                        </div>
+                                        <div class="extra_info_block_wrapper">
+                                            <div class="extra_info_block">
+                                                <div class="close">Х</div>
+                                                <div class="left"><img src="img/400x400/image_220.jpg" alt="">
+
+                                                </div>
+                                                <div class="right">
+                                                    <div class="extra_info2"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+
+                                                    <div class="btn2x surround " style="background-color:#AA0000; ">Узнать подробнее</div>
+                                                </div>
+                                                <div class="clear"></div>
+
+                                            </div>
+                                        </div>
+                                        <div class="extra_info_block_wrapper">
+                                            <div class="extra_info_block">
+                                                <div class="close">Х</div>
+                                                <div class="left"><img src="img/400x400/image_286.jpg" alt="">
+
+
+                                                </div>
+                                                <div class="right">
+                                                    <div class="extra_info3"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+
+                                                    <div class="btn3x surround " style="background-color:#AA0000; ">Узнать подробнее</div>
+                                                </div>
+                                                <div class="clear"></div>
+
+                                            </div>
+                                        </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								
+							</div>
+						</div>
+
+<div class="hide_line  style_0  section section132 " style="background-color:#ffffff;  background-image:url(/img/null.png);" data-id="677757" id="b_677757"><a name="a_655629"></a>
+							<div class="section_inner">
+								<div class="title  "><div>Пищевая ценность красной икры<br></div> </div>
+								<div class="sub_title  hidden   ">Рыбный текст</div>
+								<div class="text" style=" ">  Популярное мнение, что от красной икры полнеют – не более чем миф. Калорийность икры лососевых меньше, чем хлеба, но при этом съесть за раз такое же её количество, какое мы можем употребить хлебобулочных изделий, очень сложно. В целом диетологи едины во мнении: причиной набора веса является не икра, а дополнительные к ней продукты – хлеб и масло. Разумеется, такое сочетание привносит в организм просто немыслимое количество калорий. Если же икру есть с тем же пресловутым салатным листом, никакой угрозы фигуре при этом не будет. В состав красной икры входят и жиры. Их количество здесь достигает порядка 17% и они составляют главный энергетический резерв эмбриона. Эти жиры и небольшое количество углеводов обеспечивают калорийность красной икры, которая составляет приблизительно 250 ккал на 100 граммов. Что, кстати, не так уж и много, но достаточно, чтобы продукт обладал свойством быть отличным источником энергии при тяжёлом физическом труде. <br> Витамины и биологически активные веществаи в составе красной икры способствуют поддержке организма и профилактике и борьбе со многими опасными заболеваниями. <br></div>
+							</div>
+						</div>
+
+<div class="hide_line section section147    img_zoom" style="background-color:#FFFFFF;  background-image:url(/img/null.png);" data-id="677758" id="b_677758"><a name="a_210039"></a>
+							<div class="section_inner">
+								<div class="title  ">Фотогалерея<br><br></div>
+								<div class="sub_title  hidden   ">Проекты, которыми мы можем гордиться</div>
+								  
+									<div class="arr1">
+										<div class="image_box1  border   shadow  ">
+											<img src="img/700x350/ef0945c1f3382d0d2481c1453a628156.jpg" alt="">
+											<div class="overlay_image_box" data-link="">
+												<div class="overlay_image_title"></div>
+												<div class="overlay_image_descr"></div>
+											</div>
+										</div>
+										<div class="image_box3  border   shadow  ">
+											<img src="img/220x165/adeca84a340b104ee5ed768cf6bccdaa.jpg" alt="">
+											<div class="overlay_image_box" data-link="">
+												<div class="overlay_image_title"></div>
+												<div class="overlay_image_descr"></div>
+											</div>
+										</div>
+										<div class="image_box5  border   shadow  ">
+											<img src="img/220x165/519f516721b1fd23ba6f3abed1e74ed3.jpg" alt="">
+											<div class="overlay_image_box" data-link="">
+												<div class="overlay_image_title"></div>
+												<div class="overlay_image_descr"></div>
+											</div>
+										</div>
+									</div>
+								
+								<div class="clear"></div>
+							</div>
+						</div>
+
+<div class="hide_line section section304 " style="background-color:#FFFFFF;  background-image:url(/img/null.png);" data-id="677759" id="b_677759"><a name="a_655630"></a>
+                        <div class="section_inner">
+                                <div class="title  "><div>Минералы и витамины в красной икре<br></div> </div>
+                                <div class="sub_title  "> Так, в составе красной икры присутствуют витамины А, В, С и D, натуральный лецитин, фолиевая кислота и многие минералы<br></div>
+                                  
+                                    <div class="arr1">
+                                        <div class="spoiler open">
+                                            
+                                            <div class="spoiler_title s_title"> Профилактика рахита <br></div>
+                                            <div class="spoiler_content">
+                                                <div class="s_image  hidden   "><img src="img/400x300/image_70.jpg" alt=""></div>
+                                                <div class="s_content  full_size  "> Красная икра изобилует витамином D, а это - &nbsp;основной продукт для профилактики и предупреждения рахита у детей. Витамин D – главный антирахитичный фактор, который в принципе имеет свойство вырабатываться в организме при воздействии на него солнечных лучей. Но в условиях недостатка этих самых лучей витамин D должен поступать в организм вместе с пищей. Наиболее распространённый источник этого витамина – рыбий жир. Но икра лососевых – продукт чуть более вкусный и привлекательный для детей. <br></div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="spoiler_toggle" style="background-color: #AA0000;">+</div>
+                                        </div>
+                                    </div> 
+                                  
+                                    <div class="arr1">
+                                        <div class="spoiler open">
+                                            
+                                            <div class="spoiler_title s_title"> Поддержка нервной системы и мыслительной деятельности <br></div>
+                                            <div class="spoiler_content">
+                                                <div class="s_image  hidden   "><img src="img/400x300/image_70.jpg" alt=""></div>
+                                                <div class="s_content  full_size  "> Состав красной икры очень богат лецитином – главным источником энергии для нервных клеток. Именно благодаря его полезным свойствам после ложки красной икры думается значительно легче. Кроме того, полиненасыщенные жирные кислоты, в большом количестве входящие в состав икры, обеспечивают нормальное протекание многих процессов в мозгу и некоторых других тканях, обладая свойством защищать от болезни Альцгеймера, псориаза, кардиоваскулярных заболеваний, астмы и экземы. <br></div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="spoiler_toggle" style="background-color: #AA0000;">+</div>
+                                        </div>
+                                    </div> 
+                                  
+                                    <div class="arr1">
+                                        <div class="spoiler open">
+                                            
+                                            <div class="spoiler_title s_title"> Усиление иммунитета и поддержки зрения <br></div>
+                                            <div class="spoiler_content">
+                                                <div class="s_image  hidden   "><img src="img/400x300/image_70.jpg" alt=""></div>
+                                                <div class="s_content  full_size  "> Полезные свойства витамина А, необходимого для нормальной работы глаз и содержащегося в составе икры в натуральной форме, &nbsp;в том, что он является профилактикой многих форм рака вместе с витамином С и ненасыщенными жирными кислотами. <br></div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="spoiler_toggle" style="background-color: #AA0000;">+</div>
+                                        </div>
+                                    </div> 
+                                  
+                                    <div class="arr1">
+                                        <div class="spoiler open">
+                                            
+                                            <div class="spoiler_title s_title"> Усиление потенции <br></div>
+                                            <div class="spoiler_content">
+                                                <div class="s_image  hidden   "><img src="img/400x300/image_70.jpg" alt=""></div>
+                                                <div class="s_content  full_size  "> Икра красная полезна для мужчин тем, что в ее в состав входят многие элементы, обладающие свойствами благотворно влиять на состояние мужской половой системы и стимулирующие выработку половых гормонов. <br></div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="spoiler_toggle" style="background-color: #AA0000;">+</div>
+                                        </div>
+                                    </div> 
+                                  
+                                    <div class="arr1">
+                                        <div class="spoiler open">
+                                            
+                                            <div class="spoiler_title s_title"> Косметологическое применение <br></div>
+                                            <div class="spoiler_content">
+                                                <div class="s_image  hidden   "><img src="img/400x300/image_70.jpg" alt=""></div>
+                                                <div class="s_content  full_size  "><p>Красная икра нормализует состояние кожных покровов и облегчает лечение многих болезней кожи: экземы, дерматита, псориаза, - при употреблении ее внутрь, разумеется. Но с другой стороны, красная икра со всеми ее лечебными свойствами&nbsp; – продукт не «лёгкий», и в некоторых случаях она способна вызвать нанести определенный вред организму.<br></p> </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="spoiler_toggle" style="background-color: #AA0000;">+</div>
+                                        </div>
+                                    </div> 
+                                
+                        </div>
+                </div>
+
+<div class="hide_line  section   section128  " style="background-color:#FFFFFF;  background-image:url(/img/null.png);" data-id="677760" id="b_677760"><a name="anchor4"></a>
+							<div class="section_inner">
+								<div class="title  ">Контакты<br></div>
+								<div class="sub_title  ">Вы можете связаться с нами:<br></div>
+								  
+									<div class="arr1">
+										<div class="col_3">
+											
+											
+											<div class="ico1   radius     border   shadow  "><i class="fa fa-map-marker" style="color:#AA0000;"></i></div>
+											
+											<div class="title1">АДРЕС<br></div>
+											<div class="txt1 ">г. Москва, ул. Центральная 1, офис 100<br></div>
+											<div class="price1  hidden  ">2000 руб. за кв. м</div>
+                                                                                        <div class=" hidden btn1 surround  " style="background-color:#AA0000;  border-radius: 1.5em;    ">Узнать подробнее</div>
+											
+                                                                                        
+											
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form1"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#AA0000;    border-radius: 1.5em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text">Мы не передаем Вашу персональную информацию третьим лицам.</div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+										<div class="col_3">
+											
+											
+											<div class="ico2  radius     border   shadow  "><i class="fa fa-phone" style="color:#AA0000;"></i></div>
+											
+											<div class="title2">ТЕЛЕФОН<br></div>
+											<div class="txt2 ">8 800 333 22 33<br></div>
+											<div class="price2  hidden  ">2000 руб. за кв. м</div>
+                                                                                        <div class=" hidden btn2 surround  " style="background-color:#AA0000;  border-radius: 1.5em;    ">Узнать подробнее</div>
+											
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form2"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#AA0000;    border-radius: 1.5em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text">Мы не передаем Вашу персональную информацию третьим лицам.</div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+										<div class="col_3 last">
+											
+											
+											<div class="ico3   radius     border   shadow  "><i class="fa fa-at" style="color:#AA0000;"></i></div>
+											
+											<div class="title3">ЭЛЕКТРОННЫЙ АДРЕС<br></div>
+											<div class="txt3 ">tobiz.net<br></div>
+											<div class="price3  hidden  ">2000 руб. за кв. м</div>
+                                                                                        <div class=" hidden btn3 surround  " style="background-color:#AA0000;  border-radius: 1.5em;    ">Узнать подробнее</div>
+											
+                                                                                        
+                                                                                            <div class="popup_form">
+                            <div class="popup_form_inner">
+                                <div class="popup_form_close">X</div>
+                                <div class="popup_form_title">Оставить  заявку</div>
+                                <form action="handler.php" enctype="multipart/form-data" method="post">
+                                        <div class="form3"><input type="hidden" name="Название формы" value="">	<div class="field"><div class="field_title">Введите имя</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" name="Введите имя" placeholder="Введите имя"></div></div><div class="field"><div class="field_title">Введите E-mail</div><div class="field_description"></div><div class="field_input"><input type="email" required="required" name="Введите E-mail" placeholder="Введите E-mail"></div></div><div class="field"><div class="field_title">Введите номер телефона</div><div class="field_description"></div><div class="field_input"><input type="text" required="required" pattern="[+)( .-]*[0-9]+[0-9+)( .-]*" minlength="6" name="Введите номер телефона" placeholder="Введите номер телефона"></div></div><div class="field"><div class="field_input"><input type="submit" class="submit_btn surround" data-action="thanks" data-url="" data-amount="0" value="Отправить" style="background-color:#AA0000;    border-radius: 1.5em; ;   "></div></div></div>
+                                </form>
+                                <div class="popup_form_text">Мы не передаем Вашу персональную информацию третьим лицам.</div>
+                            </div>
+                    </div>
+                
+                                                                                        
+										</div>
+										<div class="clear"></div>
+                                        <div class="extra_info_block_wrapper">
+                                            <div class="extra_info_block">
+                                                <div class="close">Х</div>
+                                                <div class="left"><img src="img/400x400/image_247.jpg" alt="">
+
+                                                </div>
+                                                <div class="right">
+                                                    <div class="extra_info1"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+
+                                                    <div class="btn1x surround " style="background-color:#AA0000; ">Узнать подробнее</div>
+                                                </div>
+                                                <div class="clear"></div>
+
+                                            </div>
+                                        </div>
+                                        <div class="extra_info_block_wrapper">
+                                            <div class="extra_info_block">
+                                                <div class="close">Х</div>
+                                                <div class="left"><img src="img/400x400/image_220.jpg" alt="">
+
+                                                </div>
+                                                <div class="right">
+                                                    <div class="extra_info2"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+
+                                                    <div class="btn2x surround " style="background-color:#AA0000; ">Узнать подробнее</div>
+                                                </div>
+                                                <div class="clear"></div>
+
+                                            </div>
+                                        </div>
+                                        <div class="extra_info_block_wrapper">
+                                            <div class="extra_info_block">
+                                                <div class="close">Х</div>
+                                                <div class="left"><img src="img/400x400/image_286.jpg" alt="">
+
+
+                                                </div>
+                                                <div class="right">
+                                                    <div class="extra_info3"><span style="font-size:28px;">Название товара<br></span>Подробное описание продукта.<br>Здесь вы можете расписать:<ul><li>свойства товара,<br type="_moz"></li><li>параметры товара,<br type="_moz"></li><li>описание товара,</li><li>наличие на складе,</li><li>цвет,</li><li>количество.<br></li></ul><p>Напишите их тут. И будет у вас не просто сайт, а интернет-магазин. <br></p></div>
+
+                                                    <div class="btn3x surround " style="background-color:#AA0000; ">Узнать подробнее</div>
+                                                </div>
+                                                <div class="clear"></div>
+
+                                            </div>
+                                        </div>
+									</div> 
+									<div class="popup_thanks">
+                        <div class="popup_thanks_inner">
+                            <div class="popup_thanks_close">X</div>
+                            <div class="popup_thanks_title">Спасибо за заявку!</div>
+                            <div class="popup_thanks_text">Заявка отправлена. Наш менеджер свяжется с Вами в ближайшее время.</div>
+                        </div>
+                    </div>
+                
+								
+							</div>
+						</div>
+
+<div class="hide_line section section162   notext  " style="background-color:#FFFFFF;  background-image:url(/img/null.png);" data-id="677761" id="b_677761"><a name="a_210018"></a>
+							<div class="section_inner">
+								<div class="title  hidden   ">За словесными горами</div>
+								<div class="sub_title  hidden   ">Рыбный текст</div>
+								<div class="map" data-map-obj="[{&quot;address&quot;:&quot;Чебоксары, школьный проезд 1&quot;,&quot;color&quot;:&quot;#FF1500&quot;},{&quot;address&quot;:&quot;Москва, Ноовслободская 2&quot;,&quot;color&quot;:&quot;#4285F4&quot;}]" data-map-center="{&quot;zoom&quot;:5,&quot;center&quot;:[55.372152137433,40.496177132508]}"><div class="map_inner"></div></div>
+								<div class="text  hidden  ">контактная иформация</div>
+								<div class="clear"></div>
+							</div>
+					</div>
+
+<div class=" section section119   " style="background-color:#FFFFFF;  background-image:url(/img/null.png);" data-id="677762" id="b_677762"><a name="a_210019"></a><div class="section_inner">
+                                                        
+                                                            
+                                                                    <div class="logo_img"><img src="img/200x0/default_logo.jpg" alt=""></div>
+                                                            
+                                                        
+							<div class="address-and-ua">
+								<div class="address1">ООО «СтройТрейд», 123456, г.Москва, ул. Центральная 1, офис 100 <br>ИНН 1234567890 ОГРН 123456789012</div>
+								<div class="policy2 ">Политика конфиденциальности</div>
+							</div>
+							<div class="phone-and-address">
+								<div class="phone1 ">8 800 333 22 33</div>
+								<div class="text1">Звонок по России бесплатный</div>
+								<a target="_blank" href="https://tobiz.net/" class="tobiz_link ">Сделано на платформе TOBIZ.NET</a>
+							</div>
+							<div class="clear"></div>
+                                                        <div class="policy2_popup">
+                                                            <div class="policy2_title">Политика конфиденциальности</div>
+                                                            <div class="policy2_body"><p>Данный сайт уважает Ваше право и соблюдает конфиденциальность при заполнении, передаче и хранении Ваших конфиденциальных сведений.<br>Размещение заявки на данном сайте означает Ваше согласие на обработку данных и дальнейшей передачи ваших контактных данных нашей компании.<br>Под персональными данными подразумевается информация, относящаяся к субъекту персональных данных, в частности имя, контактные реквизиты (адрес электронной почты) и иные данные, относимые Федеральным законом от 27 июля 2006 года № 152-ФЗ «О персональных данных» к категории персональных данных.<br>Целью обработки персональных данных является информирование об оказываемых услугах нашей компании.</p></div>
+                                                        </div>
+						</div></div>
+
+        </div>
+            
+            
+        <!--<div class="section" id="copyright"><div class="section_inner"><div id="tobiz_link"><a href="http://tobiz.net/" target="_blank">Сделано на конструкторе сайтов TOBIZ.NET</a></div></div></div>-->
+                    </body>
+</html>
