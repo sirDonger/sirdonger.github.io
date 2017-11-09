@@ -6,7 +6,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" type ="text/css" href="css/normalize.css">
         <link rel="stylesheet" type ="text/css" href="css/style.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" type ="text/css" href="css/blueberry.css" />
+       <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
         <meta name="description" content="" />
         <meta name="keywords" content="" />
         <meta name="viewport" content="width=1200">
@@ -317,7 +319,20 @@
 <div class="hide_line section section147    img_zoom" style="background-color:#FFFFFF;  background-image:url(/img/null.png);" data-id="677758" id="b_677758"><a name="a_210039"></a>
 							<div class="section_inner">
 								<div class="title  ">Фотогалерея<br><br></div>
-									<div class="arr1">
+									
+<div class="blueberry">
+      <ul class="slides">
+        <li><img src="http://marktyrrell.com/labs/blueberry/img/slide1.jpg" /></li>
+        <li><img src="http://marktyrrell.com/labs/blueberry/img/slide2.jpg" /></li>
+        <li><img src="http://marktyrrell.com/labs/blueberry/img/slide3.jpg" /></li>
+        <li><img src="http://marktyrrell.com/labs/blueberry/img/slide4.jpg" /></li>
+      </ul>
+    </div>
+
+
+
+
+                                    <!-- <div class="arr1">
 										<div class="image_box1  border   shadow  ">
 											<img src="img/700x350/ef0945c1f3382d0d2481c1453a628156.jpg" alt="">
 											<div class="overlay_image_box" data-link="">
@@ -339,7 +354,7 @@
 												<div class="overlay_image_descr"></div>
 											</div>
 										</div>
-									</div>
+									</div> -->
 								
 								<div class="clear"></div>
 							</div>
@@ -490,5 +505,12 @@
 									</div>
 							</div>
 						</div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+        <script src="js/jquery.blueberry.js"></script>
+        <script>
+            $(window).load(function() {
+                $('.blueberry').blueberry();
+            });
+        </script>
                     </body>
 </html>
