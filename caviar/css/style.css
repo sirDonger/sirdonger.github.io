@@ -9413,9 +9413,6 @@ input{
     border: none;
     padding-left: 5px;
 }
-body{
-    background: tomato
-}
 #modal_form {
     border-radius: 5px;
     position: fixed; /* чтoбы oкнo былo в видимoй зoне в любoм месте */
