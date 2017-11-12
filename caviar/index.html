@@ -23,13 +23,20 @@
                 <div class="layer"><div class="title  "><span style="font-family:neucha;"><br>Продажа красной и черной икры</span><br></div>
                 <div class="sub_title  ">Наш ассортимент икры постоянно обновляется!<br>Успейте купить икру по акции!<br></div>
 
-                    <div class="btn1 surround  " style="background-color:#AA0000;  border-radius: 1.5em;">Оставить заявку</div>
+                    <div class="btn1 surround buy-product" style="background-color:#AA0000;  border-radius: 1.5em;">Оставить заявку</div>
                     <div class="btn_descr">Спешите, предложение ограничено!<br></div>
                 </div>
 
             </div>
         </div>
-
+<form action="formdata.php" method="POST" name="form" id="buy">
+                <span id="modal_close">X</span>
+                <div class="field"><input type="text" name="name" placeholder="Введите ваше имя" required"></div>
+                <div class="field"><input type="email" name="email" placeholder="Введите вашу почту" required></div>
+                <div class="field"><input type="tel" name="phone" placeholder="Введите ваш телефон" required></div>
+                <input id="knopka" type="submit" value="Отправить">
+            </form>
+<div id="overlay"></div><!-- Пoдлoжкa -->
 <div class="hide_line  section   section128  " style="background-color:#FFFFFF;  background-image:url(img/null.png);" data-id="677752" id="b_677752"><a name="anchor1"></a>
 							<div class="section_inner">
 								<div class="title  ">Продажа красной и черной икры<br></div>
@@ -119,7 +126,7 @@
 											<div class="image1 s200  radius    show_extra_info "><img src="img/200x200/36d864ff63f74e2f81f8d1efdbf46eef.jpg" alt=""></div>
                                             <div class="title1">ИКРА КРАСНАЯ, STANDART 8<br></div>
 											<div class="price1 "><span style="font-size:20px;">400 руб./100 гр.<br></span></div>
-                                            <div class="btn1 surround  " style="background-color:#AA0000;  border-radius: 1.5em;">Заказать</div>
+                                            <div class="btn1 surround buy-product " style="background-color:#AA0000;  border-radius: 1.5em;">Заказать</div>
 										</div>
 										<div class="col_4">
 											<div class="image2 s200  radius    show_extra_info "><img src="img/200x200/570e0bd1a19147198190ec807287149c.jpg" alt=""></div>
@@ -127,7 +134,7 @@
 											
 											<div class="title2">ИКРА ЧЕРНАЯ, STANDART 8<br></div>
 											<div class="price2 "><span style="font-size:20px">400 руб./100 гр.</span><br></div>
-                                            <div class="btn2 surround  " style="background-color:#AA0000;  border-radius: 1.5em;">Заказать</div>
+                                            <div class="btn2 surround buy-product " style="background-color:#AA0000;  border-radius: 1.5em;">Заказать</div>
                                                                                         
 										</div>
                                         <div class="clear480"></div>
@@ -135,13 +142,13 @@
 											<div class="image3 s200  radius    show_extra_info "><img src="img/200x200/193f7f9674210099a465dfecc01e7eaf.jpg" alt=""></div>
 											<div class="title3">ИКРА КРАСНАЯ, STANDART 10<br></div>
 											<div class="price3 "><span style="font-size:20px">400 руб./100 гр.</span><br></div>
-                                            <div class="btn3 surround  " style="background-color:#AA0000;  border-radius: 1.5em;    ">Заказать</div>
+                                            <div class="btn3 surround buy-product " style="background-color:#AA0000;  border-radius: 1.5em;    ">Заказать</div>
 										</div>
 										<div class="col_4 last">
 											<div class="image4 s200  radius    show_extra_info "><img src="img/200x200/452213768792316e42a10349be46f977.jpg" alt=""></div>
 											<div class="title4">ИКРА ЧЕРНАЯ, STANDART 15<br></div>
 											<div class="price4 "><span style="font-size:20px">400 руб./100 гр.</span><br></div>
-                                            <div class="btn4 surround  " style="background-color:#AA0000;  border-radius: 1.5em;">Заказать</div>
+                                            <div class="btn4 surround buy-product " style="background-color:#AA0000;  border-radius: 1.5em;">Заказать</div>
 										</div>
 										<div class="clear"></div>
                                             <div class="extra_info_block_wrapper">
@@ -464,5 +471,29 @@
                 $('.blueberry').blueberry();
             });
         </script>
+<!--модальне вікно -->
+        <script type="text/javascript">
+    $(document).ready(function() { // вся мaгия пoсле зaгрузки стрaницы
+    $('div.buy-product').click( function(event){ // лoвим клик пo ссылки с id="go"
+        event.preventDefault(); // выключaем стaндaртную рoль элементa
+        $('#overlay').fadeIn(400, // снaчaлa плaвнo пoкaзывaем темную пoдлoжку
+            function(){ // пoсле выпoлнения предъидущей aнимaции
+                $('#buy') 
+                    .css('display', 'block') // убирaем у мoдaльнoгo oкнa display: none;
+                    .animate({opacity: 1, top: '50%'}, 200); // плaвнo прибaвляем прoзрaчнoсть oднoвременнo сo съезжaнием вниз
+        });
+    });
+    /* Зaкрытие мoдaльнoгo oкнa, тут делaем тo же сaмoе нo в oбрaтнoм пoрядке */
+    $('#modal_close, #overlay').click( function(){ // лoвим клик пo крестику или пoдлoжке
+        $('#buy')
+            .animate({opacity: 0, top: '45%'}, 200,  // плaвнo меняем прoзрaчнoсть нa 0 и oднoвременнo двигaем oкнo вверх
+                function(){ // пoсле aнимaции
+                    $(this).css('display', 'none'); // делaем ему display: none;
+                    $('#overlay').fadeOut(400); // скрывaем пoдлoжку
+                }
+            );
+    });
+});
+</script>
                     </body>
 </html>
