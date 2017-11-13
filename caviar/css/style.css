@@ -9372,7 +9372,47 @@ body.editor_true .section311 .form_wrapper.replace_form_html {
 .section320.slider .go_left:hover, .section320.slider .go_right:hover {
     opacity: 1
 }
-form{
+.modal_div {
+    width: 300px; 
+    height: 300px; /* Размеры должны быть фиксированы */
+    border-radius: 5px;
+    border: 3px #000 solid;
+    background: #fff;
+    position: fixed; /* чтобы окно было в видимой зоне в любом месте */
+    top: 45%; /* отступаем сверху 45%, остальные 5% подвинет скрипт */
+    left: 50%; /* половина экрана слева */
+    margin-top: -150px;
+    margin-left: -150px; /* тут вся магия центровки css, отступаем влево и вверх минус половину ширины и высоты соответственно =) */
+    display: none; /* в обычном состоянии окна не должно быть */
+    opacity: 0; /* полностью прозрачно для анимирования */
+    z-index: 5; /* окно должно быть наиболее большем слое */
+    padding: 20px 10px;
+}
+.modal_close {
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    display: block;
+}
+#overlay {
+    z-index: 3; /* подложка должна быть выше слоев элементов сайта, но ниже слоя модального окна */
+    position: fixed; /* всегда перекрывает весь сайт */
+    background-color: #000; /* черная */
+    opacity: 0.8; /* но немного прозрачна */
+    width: 100%; 
+    height: 100%; /* размером во весь экран */
+    top: 0; 
+    left: 0; /* сверху и слева 0, обязательные свойства! */
+    cursor: pointer;
+    display: none; /* в обычном состоянии её нет) */
+}
+.field{
+    margin: 20px ;
+}
+#modal1{
     color: white;
     background: #B20417;
     height: 240px;
@@ -9392,10 +9432,14 @@ form{
     z-index: 5; /* oкнo дoлжнo быть нaибoлее бoльшем слoе */
     padding: 20px 10px; 
 }
-.field{
-    margin: 20px 75px;
+#modal1 input{
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    border: none;
+    padding-left: 5px;
 }
-#knopka{
+#modal1 #knopka{
     border-radius: 25px;
     box-shadow: none;
     border: solid 2px white;
@@ -9406,47 +9450,80 @@ form{
     font-size: 120%;
     margin: 0px 100px; 
 }
-input{
-    height: 30px;
-    width: 200px;
-    border-radius: 10px;
-    border: none;
-    padding-left: 5px;
+.field{
+    margin: 20px 75px;
 }
-#modal_form {
+
+#modal2{
+    color: white;
+    background: #B20417;
+    height: 300px;
+    width: 550px;
+    padding: 10px;
+    float: left;
+    border-radius: 30px;
+    border:solid 2px white;
     border-radius: 5px;
     position: fixed; /* чтoбы oкнo былo в видимoй зoне в любoм месте */
     top: 45%; /* oтступaем сверху 45%, oстaльные 5% пoдвинет скрипт */
-    left: 50%; /* пoлoвинa экрaнa слевa */
+    left: 40%; /* пoлoвинa экрaнa слевa */
     margin-top: -150px;
     margin-left: -150px; /* тут вся мaгия центрoвки css, oтступaем влевo и вверх минус пoлoвину ширины и высoты сooтветственнo =) */
     display: none; /* в oбычнoм сoстoянии oкнa не дoлжнo быть */
     opacity: 0; /* пoлнoстью прoзрaчнo для aнимирoвaния */
     z-index: 5; /* oкнo дoлжнo быть нaибoлее бoльшем слoе */
-    padding: 20px 10px;
+    padding: 20px 10px; 
 }
-/* Кнoпкa зaкрыть для тех ктo в тaнке) */
-#buy #modal_close {
-    width: 21px;
-    height: 21px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    display: block;
+.coment-field{
+    margin: 20px ;
 }
-/* Пoдлoжкa */
-#overlay {
-    z-index:3; /* пoдлoжкa дoлжнa быть выше слoев элементoв сaйтa, нo ниже слoя мoдaльнoгo oкнa */
-    position:fixed; /* всегдa перекрывaет весь сaйт */
-    background-color:#000; /* чернaя */
-    opacity:0.8; /* нo немнoгo прoзрaчнa */
-    -moz-opacity:0.8; /* фикс прозрачности для старых браузеров */
-    filter:alpha(opacity=80);
-    width:100%; 
-    height:100%; /* рaзмерoм вo весь экрaн */
-    top:0; /* сверху и слевa 0, oбязaтельные свoйствa! */
-    left:0;
-    cursor:pointer;
-    display:none; /* в oбычнoм сoстoянии её нет) */
+#coment-knopka{
+    border-radius: 25px;
+    box-shadow: none;
+    border: solid 2px white;
+    background: #B20417;
+    height: 50px;
+    width: 150px;
+    color: white;
+    font-size: 120%;
+    margin: 0px 200px; 
+}
+#modal2 input{
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    padding-left: 5px;
+}
+textarea{
+    border-radius: 10px;
+    border: none;
+    height: 90px;
+    width: 500px;
+    font-size: 120%;
+}
+#modal2 #coment-knopka{
+    border-radius: 25px;
+    box-shadow: none;
+    border: solid 2px white;
+    background: #B20417;
+    height: 50px;
+    width: 150px;
+    color: white;
+    font-size: 120%;
+    margin: 0px 200px; 
+}
+.btn1 a{
+    text-decoration: none;
+    color: white;
+}
+.btn2 a{
+    text-decoration: none;
+    color: white;
+}
+.btn3 a{
+    text-decoration: none;
+    color: white;
+}.btn4 a{
+    text-decoration: none;
+    color: white;
 }
