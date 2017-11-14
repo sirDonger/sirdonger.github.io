@@ -5495,6 +5495,10 @@ body.editor_true .section311 .form_wrapper.replace_form_html {
 #modal1 h2{
     margin-left:130px; 
 }
+#modal1 p{
+    font-size: 125%;
+    margin-left: 80px;
+}
 #modal1 input{
     height: 30px;
     width: 200px;
@@ -5511,7 +5515,7 @@ body.editor_true .section311 .form_wrapper.replace_form_html {
     width: 150px;
     color: white;
     font-size: 120%;
-    margin: 0px 115px; 
+    margin: 25px 115px; 
 }
 .field{
     margin: 20px 90px;
