@@ -65,3 +65,7 @@
 	border-radius: 2px;
 }
 .blueberry .pager li.active a span { background: #404040; }
+
+ul {
+	padding: 0;
+}

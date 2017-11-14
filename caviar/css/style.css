@@ -5595,3 +5595,7 @@ textarea{
  #aboutTitle {
      font-size: 2.1em;
  }
+ .slides li img {
+     width: 900px;
+     height: 600px;
+ }

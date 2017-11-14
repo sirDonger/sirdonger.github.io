@@ -26,7 +26,7 @@
 			//default values for plugin options
 			var defaults = {
 				interval: 5000,
-				duration: 500,
+				duration: 500, // 500
 				lineheight: 1,
 				height: 'auto', //reserved
 				hoverpause: false,
