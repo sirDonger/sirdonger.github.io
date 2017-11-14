@@ -5499,6 +5499,9 @@ body.editor_true .section311 .form_wrapper.replace_form_html {
     font-size: 125%;
     margin-left: 80px;
 }
+#modal1 select{
+    margin-left: 5px;
+}
 #modal1 input{
     height: 30px;
     width: 200px;
