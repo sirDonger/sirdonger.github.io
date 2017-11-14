@@ -287,7 +287,7 @@
 <span class="modal_close">X</span>
          <form action="" method="POST" name="coment-form" id="comment-form">
          <h2>Форма для комментариев</h2>
-                <div class="coment-field"><input type="text" name="name" placeholder="Введите ваше имя" required"></div>
+                <div class="coment-field"><input type="text" name="name" placeholder="Введите ваше имя" required></div>
                 <div class="coment-field"><input type="email" name="email" placeholder="Введите вашу почту" required></div>
                 <div class="coment-field"><textarea placeholder="Введите ваш коментарий" required></textarea></div>
                 <input id="coment-knopka" type="submit" value="Отправить">
@@ -295,6 +295,45 @@
 </div>
 
             </div>
+
+    <div id="blockComments">
+        <div class="comment">
+            <div class="clear"></div>
+            <div class="photoUser">
+                <img src="img/photoUser.jpg">
+            </div>
+            <div class="contentComment">
+                <h6 class="nameUser">Олег</h6>
+                <p class="textComment">Впервые заказывал икру в интернете, покупкой доволен, все вкусно, товар пришел быстро. Спасибо за вкусности :)</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="comment">
+            <div class="clear"></div>
+            <div class="photoUser">
+                <img src="img/photoUser.jpg">
+            </div>
+            <div class="contentComment">
+                <h6 class="nameUser">Антон</h6>
+                <p class="textComment">Заказал у вас банку икры на 500гр, цена приятно удивила, так же как и вкус, непременно закажу еще.</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="comment">
+            <div class="clear"></div>
+            <div class="photoUser">
+                <img src="img/photoUser.jpg">
+            </div>
+            <div class="contentComment">
+                <h6 class="nameUser">Августина</h6>
+                <p class="textComment">Класс! Врачи посоветовали пищу с содержанием йода, и тут я напоролась на этот сайт.
+                    Заказала самую большую банку икры и не пожалела. Невероятный вкус, аккуратный внешний вид, одним словом я довольна.</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+
             <div ><a href="#modal2" class="open_modal" id="button-coment">Оставить отзыв</a></div>
         </div>
     </div>
@@ -342,7 +381,7 @@ $(document).ready(function() { // запускаем скрипт после з�
 		<script type="text/javascript" src="js/share42.js"></script>
 
 	<div style="padding-top: 20px;">
-		<p style="margin-left: 20px;">©Copyright 2017</p>
+		<p style="margin-left: 20px; margin-top: -15px">©Copyright 2017</p>
 	</div>
 		</body>
 </html>

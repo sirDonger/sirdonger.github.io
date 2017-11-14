@@ -5643,3 +5643,26 @@ textarea{
  #phone{
     margin-left: 34%;
  }
+
+ .photoUser {
+     float: left;
+     width: 50px;
+
+ }
+.contentComment {
+    float: right;
+    width: 875px;
+    padding: 0 0 0 12px;
+}
+.contentComment h6 {
+    margin: 0;
+    font-size: 0.8em;
+}
+
+#blockComments {
+    margin: 30px 0;
+}
+.comment {
+    margin: 10px 0;
+    border: 1px solid silver;
+}
