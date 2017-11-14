@@ -5615,3 +5615,7 @@ textarea{
      margin: 20px 0 20px 25px;
      font-size: 1.6em;
  }
+ @font-face{
+    font-family: Open Sans;
+    src: url(fonts/2211.ttf);
+ }
