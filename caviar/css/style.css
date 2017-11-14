@@ -5615,7 +5615,15 @@ textarea{
      margin: 20px 0 20px 25px;
      font-size: 1.6em;
  }
- @font-face{
-    font-family: Open Sans;
-    src: url(fonts/2211.ttf);
+ #button-coment{
+    background-color:#AA0000;
+    border-radius: 1.5em;
+    border:solid 2px silver; 
+    height: 50px !important;
+    width: 150px;
+    text-decoration: none;
+    color: white;
+    font-size: 130%;
+    padding: 20px 30px;
+    margin-left:40%;
  }
