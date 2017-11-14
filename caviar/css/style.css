@@ -5587,3 +5587,11 @@ textarea{
     text-decoration: none;
     color: white;
 }
+
+ #styleText1, #styleText2, #styleText3 {
+     font-size: 1.1em;
+     text-align: justify;
+ }
+ #aboutTitle {
+     font-size: 2.1em;
+ }
