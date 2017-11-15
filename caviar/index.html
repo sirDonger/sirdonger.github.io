@@ -7,6 +7,7 @@
         <link rel="stylesheet" type ="text/css" href="css/normalize.css">
         <link rel="stylesheet" type ="text/css" href="css/style.css">
         <link rel="stylesheet" type ="text/css" href="css/blueberry.css" />
+        
        <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 
         <meta name="description" content="" />
@@ -30,17 +31,22 @@
 <div id="modal1" class="modal_div"> <!-- скрытый див с уникaльным id = modal1 -->
 <span class="modal_close">X</span>
 <h2>Форма заказа</h2>
-         <form action="" method="POST" name="form" id="buy">
+         <form action="submit.php" method="POST" name="form" id="buy">
+
+
+
                 <div class="field"><input type="text" name="name" placeholder="Введите ваше имя" required></div>
-                <div class="field"><input type="tel" name="phone" placeholder="Введите ваш телефон" required></div>
-                <p>Виберите товар:<select>
+                <div class="field"><input type="phone" name="phone" placeholder="Введите ваш телефон" required></div>
+                <p>Виберите товар:<select name="goods">
                 	<option>250 гр \ 250 грн</option>
                 	<option>330 гр \ 330 грн</option>
                 	<option>500 гр \ 400 грн</option>
                 	<option>1000 гр \ 650 грн</option>
                 </select>
                 </p>
-                <input id="knopka" type="submit" value="Отправить">
+               
+             <input id="knopka" type="submit" value="Отправить">
+              <div class='result'></div>
             </form>
 </div>
 
@@ -221,12 +227,14 @@
 
 <div id="modal2" class="modal_div"> <!-- скрытый див с уникaльным id = modal1 -->
 <span class="modal_close">X</span>
-         <form action="" method="POST" name="coment-form" id="comment-form">
+         <form action="submit.php" method="POST" name="coment-form" id="comment-form">
          <h2>Форма для комментариев</h2>
                 <div class="coment-field"><input type="text" name="name" placeholder="Введите ваше имя" required></div>
                 <div class="coment-field"><input type="email" name="email" placeholder="Введите вашу почту" required></div>
-                <div class="coment-field"><textarea placeholder="Введите ваш коментарий" required></textarea></div>
+                <div class="coment-field"><textarea name="message" placeholder="Введите ваш коментарий" required></textarea></div>
                 <input id="coment-knopka" type="submit" value="Отправить">
+                <div class='result'></div>
+
             </form>
 </div>
 
