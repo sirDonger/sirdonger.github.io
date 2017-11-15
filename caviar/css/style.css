@@ -4512,3 +4512,9 @@ textarea{
     margin: 10px 0;
     border: 1px solid silver;
 }
+.pictograms{
+    margin-left: 205px;
+}
+.pictograms img{
+    padding: 10px;
+}
