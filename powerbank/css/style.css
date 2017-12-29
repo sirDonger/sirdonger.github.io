@@ -1,0 +1,156 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#mainWrap {
+    width: 1366px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+header {
+    background: url("../img/header.png") no-repeat center top ;
+    width: 100%;
+    min-height: 500px;
+    position: relative;
+}
+
+/*#content {*/
+    /*position: relative;*/
+/*}*/
+
+#pBank {
+    margin-left: 30px;
+}
+
+.indicator {
+    position: absolute;
+    width: 180px;
+    height: 1px;
+}
+
+#indicator1 {
+    background-color: green;
+    top: 180px;
+    left: 380px;
+}
+
+#indicator2 {
+    background-color: green;
+    top: 230px;
+    left: 350px;
+}
+
+#indicator3 {
+    background-color: green;
+    top: 280px;
+    left: 300px;
+}
+
+.infoBank {
+    position: absolute;
+}
+
+.infoBank p {
+    margin: 0;
+    font-size: 1.3em;
+    font-family: "Comic Sans MS";
+}
+
+#info1 {
+    top: 165px;
+    left: 600px;
+}
+
+#info2 {
+    top: 215px;
+    left: 570px;
+}
+
+#info3 {
+    top: 265px;
+    left: 520px;
+}
+
+#nameBank {
+    position: absolute;
+    top: 430px;
+    left: 50px;
+    font-size: 1.2em;
+    font-family: sans-serif;
+}
+
+#tree {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#treeImg {
+    height: 550px;
+    width: 450px;
+}
+
+/*header end*/
+
+/*block4 start*/
+#block4 {
+    background-color: white;
+    min-height: 300px;
+    padding: 60px 120px;
+    font-size: 1.1em;
+    text-align: justify;
+}
+
+/*block4 end*/
+
+
+
+/*block 7 start*/
+#block7 {
+    background: url("../img/greenbg.png") no-repeat center top;
+    min-height: 400px;
+}
+
+#blockImg {
+    float: left;
+}
+
+#block7 img {
+    width: 500px;
+    height: 350px;
+    margin: 25px 40px;
+
+}
+
+#ulBlock7 {
+    float: right;
+    margin: 100px 300px 0 0;
+
+}
+
+#ulBlock7 ul li {
+    font-size: 1.5em;
+    list-style: none;
+    /*list-style-image: url("../img/markUL.png");*/
+    background: url("../img/markUL.png") no-repeat; /* Параметры фона */
+    padding-left: 40px; /* Смещаем текст вправо */
+    margin: 7px;
+}
+/*block 7 end*/
+
+
+
+
+/*footer start*/
+footer {
+    height: 50px;
+    background-color: #34495E;
+    padding: 5px 20px;
+}
+/*footer end*/
