@@ -13,6 +13,7 @@ html, body {
     clear: both;
 }
 
+/*header start*/
 header {
     background: url("../img/header.png") no-repeat center top ;
     width: 100%;
@@ -20,9 +21,6 @@ header {
     position: relative;
 }
 
-/*#content {*/
-    /*position: relative;*/
-/*}*/
 
 #pBank {
     margin-left: 30px;
@@ -97,6 +95,13 @@ header {
 }
 
 /*header end*/
+
+/*content start*/
+#content {
+    padding: 0;
+    margin: 0;
+}
+/*content end*/
 
 /*block4 start*/
 #block4 {
