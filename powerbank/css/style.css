@@ -115,6 +115,96 @@ header {
 /*block4 end*/
 
 
+/*block5 start*/
+#block5 {
+    background: url("../img/bg5.jpg") no-repeat center top;
+    min-height: 650px;
+    margin: 0;
+    padding: 20px;
+    position: relative;
+}
+
+#block5 h4 {
+    margin: 0;
+    text-align: center;
+    font-size: 2em;
+    font-family: "Comic Sans MS";
+}
+
+#imgReviews {
+    position: absolute;
+    left: 450px;
+    top: 170px;
+}
+
+.coments {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    padding: 20px;
+    font-family: "Times New Roman";
+}
+
+.coments h6 {
+    font-size: 1.1em;
+    margin: 5px;
+}
+
+#coment1 {
+    top: 100px;
+    left: 50px;
+}
+
+#coment2 {
+    top: 100px;
+    right: 50px;
+}
+
+#coment3 {
+    top: 390px;
+    left: 50px;
+}
+
+#coment4 {
+    top: 390px;
+    right: 50px;
+}
+
+.photoUser {
+    position: absolute;
+}
+
+.photoUser img {
+    width: 70px;
+    height: 50px;
+    z-index: 10;
+}
+
+#userPhoto1 {
+    top: 70px;
+    left: 40px;
+}
+
+#userPhoto2 {
+    top: 70px;
+    right: 330px;
+}
+
+#userPhoto3 {
+    top: 360px;
+    left: 40px;
+}
+
+#userPhoto4 {
+    top: 360px;
+    right: 330px;
+}
+
+
+/*block5 end*/
+
 
 /*block 7 start*/
 #block7 {
