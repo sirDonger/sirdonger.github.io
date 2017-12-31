@@ -296,6 +296,49 @@ header {
 /*block5 end*/
 
 
+/*block6 start*/
+#block6 {
+    min-height: 500px;
+}
+
+#tittleOrder {
+    margin: 30px auto;
+    width: 320px;
+}
+
+#tittleOrder h6 {
+    font-family: "Times New Roman";
+    font-size: 3em;
+    color: #3498DB;
+    margin: 0;
+}
+
+#howOrder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 80px;
+}
+
+.arrow {
+    margin-top: 55px;
+}
+
+.order {
+    color: #3498DB;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.textOrder {
+    width: 200px;
+}
+
+
+
+/*block6 end*/
+
+
 /*block 7 start*/
 #block7 {
     background: url("../img/greenbg.png") no-repeat center top;
