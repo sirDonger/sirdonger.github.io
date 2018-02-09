@@ -1,0 +1,45 @@
+﻿@font-face {
+    font-family: 'museo_sans_cyrl500';
+    src: url('../fonts/museosanscyrl-webfont.txt') format('woff2'),
+         url('../fonts/museosanscyrl-webfont.woff') format('woff'),
+         url('../fonts/museosanscyrl-webfont-1.txt') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: "LatoLight";
+    src: url("../fonts/LatoLight.eot");
+    src: url("../fonts/LatoLight-1.eot")format("embedded-opentype"),
+    url("../fonts/LatoLight.woff") format("woff"),
+    url("../fonts/LatoLight.txt") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "LatoRegular";
+    src: url("../fonts/LatoRegular.eot");
+    src: url("../fonts/LatoRegular-1.eot")format("embedded-opentype"),
+    url("../fonts/LatoRegular.woff") format("woff"),
+    url("../fonts/LatoRegular.txt") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "LatoSemibold";
+    src: url("../fonts/Lato-Semibold.eot");
+    src: url("../fonts/Lato-Semibold-1.eot")format("embedded-opentype"),
+    url("../fonts/Lato-Semibold.woff") format("woff"),
+    url("../fonts/Lato-Semibold.txt") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "LatoBold";
+    src: url("../fonts/LatoBold.eot");
+    src: url("../fonts/LatoBold-1.eot")format("embedded-opentype"),
+    url("../fonts/LatoBold.woff") format("woff"),
+    url("../fonts/LatoBold.txt") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
