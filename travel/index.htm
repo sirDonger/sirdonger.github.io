@@ -1011,7 +1011,7 @@
         <div class="col col_1">
           <div class="image">
             <a href="individual-tur\poezdka-na-srednevekovoe-shou-v-pomestye-detenitse.htm">
-              <img src="image\cache\data\PhotoCR\Detenice\1-1003x210.jpg" alt="">
+              <img src="image\cache\data\PhotoCR\Detenice\1-1003x210.jpg" alt="" style="opacity: 100% !important;">
             </a>
 		        		        <div class="block_action block_action2">
 		          		                      
@@ -1404,7 +1404,7 @@
 		});
 
 		$(".js-example-basic-multiple").select2({tags: true});
-		turGenerate();
+		// turGenerate();
 		$(document).on('click','.show-all-tur',function(){
 			var a = $('.sort .active a');
 			$.ajax({
@@ -1567,19 +1567,19 @@
 			}		
 		});		
 	});
-	function turGenerate(){
-		$('.tour_item input[type="checkbox"]').styler();
-	     $('.tour_item .top_line .image a').each(function(){
-	     	console.log($(this).find('img').attr('src'));
-	     	$(this).find('img')
-	     	.css('opacity', '0')
-	     	.closest('.tour_item .top_line .image')
-	     	.css({
-	    		"background": "url('" + $(this).find('img').attr('src')+"') 50% 50% no-repeat",
-	    		"backgroundSize": "cover"
-	    	});		
-	     });		
-	}
+	// function turGenerate(){
+	// 	$('.tour_item input[type="checkbox"]').styler();
+	//      $('.tour_item .top_line .image a').each(function(){
+	//      	console.log($(this).find('img').attr('src'));
+	//      	$(this).find('img')
+	//      	.css('opacity', '0')
+	//      	.closest('.tour_item .top_line .image')
+	//      	.css({
+	//     		"background": "url('" + $(this).find('img').attr('src')+"') 50% 50% no-repeat",
+	//     		"backgroundSize": "cover"
+	//     	});
+	//      });
+	// }
 </script>
   <div class="search_tour">
     <div class="inner">
@@ -2139,21 +2139,21 @@
     <div class="popup-inner">
 <script type="text/javascript" src="//vk.com/js/api/openapi.js?132"></script>
 
-<!-- VK Widget -->
-<div id="vk_groups"></div>
-<script type="text/javascript">
-VK.Widgets.Group("vk_groups", {mode: 3, width: "250", height: "400", color1: 'FFFFFF', color2: '000000', color3: '5E81A8'}, 117875479);
-VK.Observer.subscribe("widgets.groups.joined", function f()
-{
-  $.get('/index.php?route=product/product/setsale&sale=vk1',function(data){
-    $('#right-order').html(data); 
-    $.get('/index.php?route=product/product/getcart',function(data2){
-      $('#cart').html(data2);
-      $('.mfp-close').click();
-    })            
-  });
-});
-</script>
+<!--&lt;!&ndash; VK Widget &ndash;&gt;-->
+<!--<div id="vk_groups"></div>-->
+<!--<script type="text/javascript">-->
+<!--VK.Widgets.Group("vk_groups", {mode: 3, width: "250", height: "400", color1: 'FFFFFF', color2: '000000', color3: '5E81A8'}, 117875479);-->
+<!--VK.Observer.subscribe("widgets.groups.joined", function f()-->
+<!--{-->
+  <!--$.get('/index.php?route=product/product/setsale&sale=vk1',function(data){-->
+    <!--$('#right-order').html(data); -->
+    <!--$.get('/index.php?route=product/product/getcart',function(data2){-->
+      <!--$('#cart').html(data2);-->
+      <!--$('.mfp-close').click();-->
+    <!--})            -->
+  <!--});-->
+<!--});-->
+<!--</script>-->
 
         </div>
  </div><div id="okgrp" class="popup-form popup-dilog zoom-anim-dialog">
@@ -2237,70 +2237,17 @@ Copyright by Happy Transfer 2016</div>
         <div class=""><ul id="amenu"><li class=""><a href="usloviya-ispol-zovanie.htm" title="Условия использование"><span>Условия использование</span></a></li><li class=""><a href="obschie-usloviya.htm" title="Общие условия"><span>Общие условия</span></a></li></ul></div>        
   
           </div>
-          <div class="develop">
-            <span>Site was build by</span>
-            <a href="http://web-reactor.eu">
-              <img src="image\developer.png" alt="">
-            </a>
-          </div>
+          <!--<div class="develop">-->
+            <!--<span>Site was build by</span>-->
+            <!--<a href="http://web-reactor.eu">-->
+              <!--<img src="image\developer.png" alt="">-->
+            <!--</a>-->
+          <!--</div>-->
         </div>
         </div>
 
     </footer>
 
-<script>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-88875824-1']);
-  _gaq.push(['_trackPageview']);  
-  (function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-88875824-1', 'auto');
-  ga('send', 'pageview');
-
-
-
-</script>
-
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-            try {
-                w.yaCounter41539959 = new Ya.Metrika({
-                    id:41539959,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true,
-                    webvisor:true,
-                    trackHash:true
-                });
-            } catch(e) { }
-        });
-
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-    })(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/41539959" style="position:absolute; left:-9999px;" alt=""></div></noscript>
-<!-- /Yandex.Metrika counter -->
 
 </body>
 
