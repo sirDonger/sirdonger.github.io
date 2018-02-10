@@ -1894,7 +1894,7 @@
           <div class="head">
             <div class="h2">Ваши интересы / пожелания</div>
           </div>
-          <div class="body">
+          <div class="body" style="width: 100%">
           	          	          		
             <label>
               <span class="inner_label">
@@ -1998,85 +1998,85 @@
               });
             });
           </script>
-          <div class="right">
-            <div class="head">
-              <div class="h2">Предпочтительный способ передвижения</div>
-            </div>
-            <div class="body">
-              <div id="top_line_slider">
-                <div class="col col_1">100%</div>
-                <div class="col col_2">0%</div>
-                <div class="col col_3">100%</div>
-                <div class="clr"></div>
-              </div>
-              <div id="wrap_slider">
-              <input type="text" name="amount1" id="amount" readonly="" style="border:0; color:#f6931f; font-weight:bold;">
-              <div id="slider_step"></div>
-              <input type="text" name="amount2" id="amount2" readonly="" style="border:0; color:#f6931f; font-weight:bold;">
-              <div id="slider_car"></div>
-              <div class="clr"></div>
-              </div>
-              <div id="bottom_line_slider">
-                <div class="text_step">
-                  <div class="text">
-                    <i></i>
-                    <span>Гулять пешком</span>
-                  </div>
-                </div>
-                <div class="text_car">
-                  <div class="text">
-                    <span>Ехать на машине</span>
-                    <i></i>
-                  </div>
-                </div>
-                <div class="clr"></div>
-              </div>
-              <script>
-              $( function() {
-                $( "#slider_step" ).slider({
-                  range: "max",
-                  min: 0,
-                  max: 100,
-                  value: 50,
-                  step:1,
-                  slide: function( event, ui ) {
-                    $( "#amount" ).val( 100 - ui.value );
-                    $('#proc_slider').html(100 - ui.value);
-                    $( "#slider_car" ).slider("value",ui.value);
-                    $( "#amount2" ).val( ui.value );
-                    $('#proc_slider2').html(ui.value);
-                  },
-                  create: function( event, ui ) {
-                     $('#slider_step .ui-state-default').html('<div id="proc_slider">'+(100 - ui.value)+'</div>');
-                  }
-                });
-                $( "#amount" ).val(100 -$( "#slider_step" ).slider( "value" ));
-                $('#proc_slider').html(100 -$( "#slider_step" ).slider( "value" ));
+          <!--<div class="right">-->
+            <!--<div class="head">-->
+              <!--<div class="h2">Предпочтительный способ передвижения</div>-->
+            <!--</div>-->
+            <!--<div class="body">-->
+              <!--<div id="top_line_slider">-->
+                <!--<div class="col col_1">100%</div>-->
+                <!--<div class="col col_2">0%</div>-->
+                <!--<div class="col col_3">100%</div>-->
+                <!--<div class="clr"></div>-->
+              <!--</div>-->
+              <!--<div id="wrap_slider">-->
+              <!--<input type="text" name="amount1" id="amount" readonly="" style="border:0; color:#f6931f; font-weight:bold;">-->
+              <!--<div id="slider_step"></div>-->
+              <!--<input type="text" name="amount2" id="amount2" readonly="" style="border:0; color:#f6931f; font-weight:bold;">-->
+              <!--<div id="slider_car"></div>-->
+              <!--<div class="clr"></div>-->
+              <!--</div>-->
+              <!--<div id="bottom_line_slider">-->
+                <!--<div class="text_step">-->
+                  <!--<div class="text">-->
+                    <!--<i></i>-->
+                    <!--<span>Гулять пешком</span>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="text_car">-->
+                  <!--<div class="text">-->
+                    <!--<span>Ехать на машине</span>-->
+                    <!--<i></i>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="clr"></div>-->
+              <!--</div>-->
+              <!--<script>-->
+              <!--$( function() {-->
+                <!--$( "#slider_step" ).slider({-->
+                  <!--range: "max",-->
+                  <!--min: 0,-->
+                  <!--max: 100,-->
+                  <!--value: 50,-->
+                  <!--step:1,-->
+                  <!--slide: function( event, ui ) {-->
+                    <!--$( "#amount" ).val( 100 - ui.value );-->
+                    <!--$('#proc_slider').html(100 - ui.value);-->
+                    <!--$( "#slider_car" ).slider("value",ui.value);-->
+                    <!--$( "#amount2" ).val( ui.value );-->
+                    <!--$('#proc_slider2').html(ui.value);-->
+                  <!--},-->
+                  <!--create: function( event, ui ) {-->
+                     <!--$('#slider_step .ui-state-default').html('<div id="proc_slider">'+(100 - ui.value)+'</div>');-->
+                  <!--}-->
+                <!--});-->
+                <!--$( "#amount" ).val(100 -$( "#slider_step" ).slider( "value" ));-->
+                <!--$('#proc_slider').html(100 -$( "#slider_step" ).slider( "value" ));-->
 
 
-                $( "#slider_car" ).slider({
-                  range: "max",
-                  min: 0,
-                  max: 100,
-                  value: 50,
-                  step:1,
-                  slide: function( event, ui ) {
-                    $( "#amount2" ).val( ui.value );
-                    $('#proc_slider2').html(ui.value);
-                     $( "#slider_step" ).slider("value",ui.value);
-                    $( "#amount" ).val( 100 - ui.value );
-                    $('#proc_slider').html(100 - ui.value);
-                  },
-                  create: function( event, ui ) {
-                     $('#slider_car .ui-state-default').html('<div id="proc_slider2">'+(ui.value)+'</div>');
-                  }
-                });
-                $( "#amount2" ).val( $( "#slider_car" ).slider( "value" ) );
-                $('#proc_slider2').html($( "#slider_car" ).slider( "value" ));
-              } );
-              </script>
-            </div>
-          </div>
+                <!--$( "#slider_car" ).slider({-->
+                  <!--range: "max",-->
+                  <!--min: 0,-->
+                  <!--max: 100,-->
+                  <!--value: 50,-->
+                  <!--step:1,-->
+                  <!--slide: function( event, ui ) {-->
+                    <!--$( "#amount2" ).val( ui.value );-->
+                    <!--$('#proc_slider2').html(ui.value);-->
+                     <!--$( "#slider_step" ).slider("value",ui.value);-->
+                    <!--$( "#amount" ).val( 100 - ui.value );-->
+                    <!--$('#proc_slider').html(100 - ui.value);-->
+                  <!--},-->
+                  <!--create: function( event, ui ) {-->
+                     <!--$('#slider_car .ui-state-default').html('<div id="proc_slider2">'+(ui.value)+'</div>');-->
+                  <!--}-->
+                <!--});-->
+                <!--$( "#amount2" ).val( $( "#slider_car" ).slider( "value" ) );-->
+                <!--$('#proc_slider2').html($( "#slider_car" ).slider( "value" ));-->
+              <!--} );-->
+              <!--</script>-->
+            <!--</div>-->
+          <!--</div>-->
           <div class="clr"></div>
         </div>
         <div class="comments">

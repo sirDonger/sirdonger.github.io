@@ -1266,8 +1266,8 @@ body>iframe{display: none;}
 
 .bf_filter {padding: 35px 0;}
 .bf_filter .head {margin: 0;}
-.bf_filter .left {float: left;width: 58%;}
-.bf_filter .right {float: left;width: 42%;}
+.bf_filter .left {float: left;width: 100%;}
+/*.bf_filter .right {float: left;width: 42%;}*/
 .bf_filter .h2 {font-size: 16px;line-height: 24px;padding-bottom: 25px;text-align:left;font-weight: normal;font-family: 'Open-Sans',sans-serif;}
 .bf_filter .left label {float: left;width: 25%;padding: 0 3px 0 0;cursor:pointer;}
 .bf_filter .left label:nth-child(4n+1) {clear: both;}
