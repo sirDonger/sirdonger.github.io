@@ -1488,3 +1488,9 @@ body>iframe{display: none;}
     border-color: transparent;
     border-style: solid;
 }
+
+.imgSlider {
+	width: 100%;
+	height: 100%;
+}
+
